@@ -13,7 +13,7 @@ namespace ScriptRunnerGUI.ViewModels
         [RelayCommand]
         public async Task RunScriptAsync()
         {
-            await Task.Run(() => _executor.RunPythonScript("clean-up.py"));
+            await Task.Run(() => _executor.RunScript("clean-up.py"));
         }
     }
 }
