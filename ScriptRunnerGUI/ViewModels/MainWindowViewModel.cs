@@ -1,21 +1,19 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using ScriptRunnerGUI.Services;
+using System.Threading.Tasks;
 
 namespace ScriptRunnerGUI.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting { get; } = "Welcome to Avalonia!";
+        private readonly ScriptExecutor _executor = new();
 
-        //public MainWindowViewModel()
-        //{
-        //    // Initialization logic can go here if needed
-        //}
-
-        public ObservableCollection<string> ScriptList { get; } = new ObservableCollection<string>()
+        // This method will be executed asynchronously when the command is invoked.
+        [RelayCommand]
+        public async Task RunScriptAsync()
         {
-            "Script_1",
-            "Script_2", 
-            "Script_3", 
-        }; 
+            await Task.Run(() => _executor.RunPythonScript("clean-up.py"));
+        }
     }
 }

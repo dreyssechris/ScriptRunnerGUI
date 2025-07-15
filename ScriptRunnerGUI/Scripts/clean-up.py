@@ -1,5 +1,6 @@
 import os
 import shutil
+from tkinter.filedialog import askdirectory
 
 # general files
 ALLOWED_FORMATS_IMAGE = ['.png', '.jpg', '.gif', '.tiff', '.raw', '.psd'] 
@@ -25,7 +26,9 @@ ALLOWED_FORMATS_CODE = (
 SUBFOLDERS_FOR_CODEFOLDER = ["C", "Python", "Java", "Sql", "Website_Development"]
 
 # __file__ == path of script 
-currentFolder = os.path.dirname(__file__)
+# currentFolder = os.path.dirname(__file__) 
+# currentFolder = r"C:\Users\chris\OneDrive\Desktop"
+currentFolder = askdirectory(title="Select the folder to clean up")
 
 # folders to create if they don't exist
 imageFolder = os.path.join(currentFolder, "Images")

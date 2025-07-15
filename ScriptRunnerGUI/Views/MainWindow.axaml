@@ -15,6 +15,18 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<StackPanel Margin="20" Spacing="10">
+		<Button Content="Clean-Up starten"
+				Command="{Binding RunScriptAsync}" />
+
+		<!-- 
+		<TextBlock Text="Skriptausgabe:" FontWeight="Bold" />
+
+		<TextBox Text="{Binding Output}"
+				 AcceptsReturn="True"
+				 IsReadOnly="True"
+				 Height="200" />
+				 -->
+	</StackPanel>
 
 </Window>
