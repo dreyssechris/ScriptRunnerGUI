@@ -11,9 +11,10 @@
   <ItemGroup>
     <Folder Include="Models\" /> 
     <AvaloniaResource Include="Assets\**" />
-    <Content Include="Scripts\**\*.py">
+    <Content Include="Scripts\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Folder Include="Doc\" />
   </ItemGroup>
 
   <ItemGroup>

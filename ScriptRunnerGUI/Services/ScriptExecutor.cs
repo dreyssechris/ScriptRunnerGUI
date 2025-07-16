@@ -78,7 +78,8 @@ namespace ScriptRunnerGUI.Services
                 {
                     Console.WriteLine($"Failed to start script: {scriptName}");
                 }
-            } catch (Exception ex)
+            } 
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error running script {scriptName}: {ex.Message}");
             }
